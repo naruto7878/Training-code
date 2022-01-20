@@ -22,7 +22,7 @@
 4. Update function to Menu to display all the current elements from the JSON file
     * Closing the program should still display any current elements from the JSON file
 5. Update function to Menu to remove certain elements from the JSON file
-6. Add function to Menu to search for a certain element in a JSON file
+6. Update function to Menu to search for a certain element in a JSON file
     * Look into C# documentation of what methods are available for you in the collection that you are using that might help you find certain elements
     * You can also just create your own coding logic to find certain elements in a collection
     * If no element exist, be sure to tell the user that the element was not found.
