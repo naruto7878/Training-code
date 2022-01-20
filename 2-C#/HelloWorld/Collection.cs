@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace CollectionFunction
 {
     public class Collection
@@ -29,6 +31,7 @@ namespace CollectionFunction
 
         //Non-generic Collection
         //They store any datatype and have variable size
+        private ArrayList _nonGeneric = new ArrayList();
 
         public void CollectionMain()
         {
@@ -88,9 +91,19 @@ namespace CollectionFunction
             // _directory.Add("Stephen", 1000); --Will give an exception due to Stephen key already existing
 
             //Dictionary uses key to look up information from its stored data
+            //Useful for grabbing just specific data from a collection
             Console.WriteLine(_directory["Stephen"]);
             Console.WriteLine(_directory["Jonathon"]);
             
+            Console.WriteLine("===Non-generic Collection===");
+
+            _nonGeneric.Add("Stephen");
+            _nonGeneric.Add(10);
+            _nonGeneric.Add(true);
+            _nonGeneric.Add(10.70);
+
+            _strings[0].ToUpper();
+            // _nonGeneric[0].ToUpper(); --Will not work due to the element being an object as it was autoboxing from a string initially
         }
     }
 }
