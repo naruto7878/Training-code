@@ -2,6 +2,7 @@
 using CarFunction;
 using CollectionFunction;
 using ConversionFunction;
+using SerializationFunction;
 
 //This will print whatever string you put in the parenthesis into the terminal
 // Console.WriteLine("Hello, World!");
@@ -81,3 +82,5 @@ Conversion._num = 200;
 
 Console.WriteLine(conv1.GiveMeNumber());
 Console.WriteLine(conv2.GiveMeNumber());
+
+Serialization.SerialMain();
