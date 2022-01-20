@@ -60,5 +60,5 @@
 * Quite confusing when working with it the first time
 
 ### Useful link to understand all the commands you can use with Git
-* [A nice game that visalizes what Git does](https://learngitbranching.js.org/?locale=en_US)
+* [A nice game that visualize what Git does](https://learngitbranching.js.org/?locale=en_US)
 * [Git Documentation](https://git-scm.com/doc)
