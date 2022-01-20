@@ -52,3 +52,46 @@
 # What happens when you run your code?
 * Well the computer doesn't understand english language and the keywords we have written in our source code (source codes are any files that we write code in)
 * Instead, a compiler is the one responsible that will look into your source code and convert them into machine code (machine code are just a bunch of 1s and 0s or binary)
+
+# Arrays
+* Used to store a datatype and have fixed sizes
+* Zero-based index
+    * 0 is the starting position of the array
+* Other arrays you can make:
+    * Multidimensional arrays - int[,] ex = new int[4,2]; would create
+    [ [0, 0],
+      [0, 0],
+      [0, 0],
+      [0, 0] ]
+    * Jagged arrays - arrays inside of an array are different sizes
+    [ [0, 0, 0], 
+      [0, 0],
+      [0, 0, 0],
+      [0, 0 , 0, 0]
+    ]
+# Collections
+* It is a data structure that can hold many values
+* All collection has methods to add, remove, or find items since they all inherit from IEnumerable Interface
+* In C#, there are two major types of collections: Generic and Non-generic
+## Generic
+* They are collections that store specific datatype
+* The "T" you see in documentation is where you put what data type that collection will hold
+### List
+* Zero-based index
+* Used to store a datatype and have dynamically changing sizes
+* The most generic collection that is like an array but doesn't have a fixed size
+### HashSet
+* There is no particular order to the elements (Not zero-based index)
+    * It is harder to find specific elements unless you use LINQ (that's later on)
+* Every element is unique (Cannot have duplicated elements)
+* Useful since you can perform set operations on two HashSets
+* Example of set operations:
+    * UnionWith - Lets you combine two Hashsets
+    * ExceptWith - Substracts a Hashset from another Hashset
+    * etc.
+### Dictionary
+* Stores info through key-value pairs
+* There is also no particular order
+* You can specify what datatype you want both the key and value to be
+* Useful if you want to find specific information if you know the key
+    * Think about your contacts, to find someone's phone number (Value) you just have to search for the person's name (Key) instead of trying to figure out what position that person might be located in like a List collection or an Array
