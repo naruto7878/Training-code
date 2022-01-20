@@ -14,7 +14,7 @@
 * To be able to understand what the user is trying to ask it to do, it has pre-made keywords that the user can do
 * Want to change directory? Well the user needs to type "cd" on the CLI to undersand that you want to change directory. Anything else you type it may not understand it and shell will also let you know that it didn't understand it
 
-## Shell Commands (Be sure to memorize all of them and also test them out)
+## Shell Commands
 * Help - shows all the potential commands you can use in the terminal 
     * pretty universal that any added shell commands we get from installing a library, SDK, or framework will have a help command to show their specific commands
 * Pwd - shows the current directory the terminal is in
@@ -34,17 +34,31 @@
 * Nano - Allows us to edit files
     * Think of notepad
 
-# Basic Programming
-## Variable
-* They are a way for us to store information that we can then reference at a later time
+## GIT
+* It is a Version Control System (VCS)
+    * Allows you to manage the changes/developments made in a project
+* As you know, the more you develop your application the more changes you add to it and it becomes impossible to track it manually. GIT does it for us.
+* It will create a local repository for us.
 
-## Control Flow
-* They are a way to control what commands should go first or what commands should be repeated or what commands can only execute if some condition has been met
-* They control the flow of order of what commands/instructions are to be executed
-* Types of control flows:
-    * If statement - Will only run lines of code if a condition is true
-        * else if - a second condition that will also be checked if the first condition was false
-        * else - if any condition didn't work, this lines of code will be written
-    * While statement - Will repeat something as long as a condition is true
-    * There are more but we will go over them in C#
+### What is a Repository?
+* It is the one responsible for storing all the information of all the changes you have made to your project files.
 
+### So where does Github comes into play?
+* Github is just a cloud service that stores your repository in the cloud (internet) for everyone else to have access to your project and all the changes you've made to it.
+* Github is essential to the process because it lets us work on the same project with multiple people. 
+* Just imagine 5 people trying to access the same computer just to work on the same project. That would be a nightmare!
+* Instead, we use Github to create a remote repository that we can share with everyone else and they can work on their **own** copy of the project in their **own** computer (in a more technical term is they will create a local repository that is similar to the remote repository). Once they finish, they can **push** (Just means upload) their version of local repository to the remote repository to update the remote repository to look like the local repository.
+
+### Pros
+* Allows you to keep track of all the changes to each file to help you debug potential issues
+* Allows you to backtrack to previous version of your code if your current version is too unstable
+* If local files gets corrupted, you can get the files stored in Github to restore it
+
+### Cons
+* You might have merge conflicts
+    * Just imagine one peson worked on the same file as another person and Git doesn't know which modified version to use
+* Quite confusing when working with it the first time
+
+### Useful link to understand all the commands you can use with Git
+* [A nice game that visalizes what Git does](https://learngitbranching.js.org/?locale=en_US)
+* [Git Documentation](https://git-scm.com/doc)
