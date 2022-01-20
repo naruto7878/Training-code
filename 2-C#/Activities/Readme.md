@@ -30,4 +30,4 @@
 * Be sure to take into account that File.WriteAllText() method will overwrite anything inside of the JSON file
     * A good possible workflow would be to convert the JSON into a collection first then add the new element in then convert the collection back into a JSON then save it into a JSON file (in this way anything overwritten will not be lost)
 * You already have most of the functionality if you completed it from last group activity so just think about when to convert it to JSON string and when to save it into a JSON file
-* Be sure to have exception handling in your code for possible exceptions the user might run into
+* ~~Be sure to have exception handling in your code for possible exceptions the user might run into~~ Since we didn't do exception handling yet
