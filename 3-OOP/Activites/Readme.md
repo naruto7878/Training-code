@@ -20,7 +20,7 @@
 * Like our previous group activity, start creating a menu interface that will navigate through your store app.
 * One big difference from our last group activity is that we are making multiple C# files that will correspond to a single menu page.
     * Just follow the general rule that every C# file should have only one responsibilty and should only be change for that one responsibility only
-    * Ex: Adding a customer will need a menu to display to the user what 
+    * Ex: Adding a customer will need a menu to display to the user what they will need to add a customer
 * Look at the functionalities required for this project and start thinking of a menu that can accomplish those tasks
 * Ex:
     Adding a customer
