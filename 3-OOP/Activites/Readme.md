@@ -28,3 +28,11 @@
     - It will need to save that information into a model
     - It needs proper validation (if one of the fields needs an age to make a customer, it wouldn't make sense if the user can input -30 as their age)
     - It needs proper conversion of datatypes since Console.ReadLine() will always give a string 
+
+## Adding project to a separate github remote repository
+* Create a new Github repository in the organization
+* Naming convention - Firstname-Lastname-P0
+* Store anything project 0 related inside of this remote repository
+### Tips
+* Make sure your project 0 folder is not inside of another local repository that already exist (You should put it on a different folder)
+* Then follow the same steps located inside our first group activity
