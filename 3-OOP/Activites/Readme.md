@@ -15,6 +15,7 @@
 * Start creating any number of models you think you will need to accomplish the store app
 * the PDF file should give you a starting point of what models you will need
 * Think about what model will have a collection of another model like my demo
+* Make sure your models have proper validation to make your life easier later on
 
 ## Implement a basic UI menus
 * Like our previous group activity, start creating a menu interface that will navigate through your store app.
