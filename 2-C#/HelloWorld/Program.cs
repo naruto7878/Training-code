@@ -49,7 +49,7 @@ using SerializationFunction;
 //         Console.WriteLine("Please give me two numbers");
 //         //Convert class is designed for us to convert datatypes into another datatype
 //         //It isn't perfect
-//         int num1 = Convert.ToInt32(Console.ReadLine());
+        // int num1 = Convert.ToInt32(Console.ReadLine());
 
 //         int num2 = Convert.ToInt32(Console.ReadLine());
 
