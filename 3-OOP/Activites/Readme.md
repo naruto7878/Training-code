@@ -29,7 +29,7 @@
     - It needs proper validation (if one of the fields needs an age to make a customer, it wouldn't make sense if the user can input -30 as their age)
     - It needs proper conversion of datatypes since Console.ReadLine() will always give a string 
 
-## Adding project to a separate github remote repository
+## Adding project0 to a separate github remote repository
 * Create a new Github repository in the organization
 * Naming convention - Firstname-Lastname-P0
 * Store anything project 0 related inside of this remote repository
