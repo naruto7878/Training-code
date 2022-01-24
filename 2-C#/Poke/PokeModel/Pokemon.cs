@@ -8,12 +8,14 @@
         public int Defense { get; set; }
         public int Health { get; set; }
 
+        //Full properties are required to do validation
         private List<Ability> _abilities;
         public List<Ability> Abilities
         {
             get { return _abilities; }
             set 
             { 
+                //Cannot set abilities to have more than 4
                 if (value.Count < 4)
                 {
                     _abilities = value;

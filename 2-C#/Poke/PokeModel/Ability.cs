@@ -3,6 +3,8 @@ namespace PokeModel
     public class Ability
     {
         public string Name { get; set; }
+
+        //Full property is needed to add validation
         private int _PP;
         public int PP
         {
