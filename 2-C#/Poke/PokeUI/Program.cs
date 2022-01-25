@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 // using PokeModel;
+using PokeBL;
+using PokeDL;
 using PokeUI;
 // Console.WriteLine("Hello, World!");
 // Ability ab = new Ability();
@@ -17,7 +19,7 @@ while (repeat)
     switch (ans)
     {
         case "AddPokemon":
-            menu = new AddPokeMenu();
+            menu = new AddPokeMenu(new PokemonBL(new Repository()));
             break;
         case "MainMenu":
             menu = new MainMenu();
