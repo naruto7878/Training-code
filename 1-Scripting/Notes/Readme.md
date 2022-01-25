@@ -70,6 +70,19 @@
 * Less hardware space is required since you don't have to clone the entire application to your computer
     * But nowadays, programming is so space efficient that it doesn't really require that massive amount of space so cloning the entire application to your computer isn't that big of a deal
 
+## .gitignore
+* Special file that anything added into it will automatically ignore certain files
+* Useful for pre-generated files to save space and security sensitive files
+
+## Git CLI commands
+* Git init - Creates an empty local repository
+* Git status - Check which files are in staging and which aren't in staging
+* Git add . - Will add every file to staging (except ignored files)
+* Git commit - Records the changes to the repository
+    * -m Will let us attach a message to that commit
+* Git branch - push the changes you made to a remote repo
+* Git pull - pull the changes made in your remote repo
+
 ### Useful link to understand all the commands you can use with Git
 * [A nice game that visualize what Git does](https://learngitbranching.js.org/?locale=en_US)
 * [Git Documentation](https://git-scm.com/doc)
