@@ -37,6 +37,7 @@
 ## GIT
 * It is a Version Control System (VCS)
     * Allows you to manage the changes/developments made in a project
+    * More specifically is a **Distributed Version Control System** (DVCS)
 * As you know, the more you develop your application the more changes you add to it and it becomes impossible to track it manually. GIT does it for us.
 * It will create a local repository for us.
 
@@ -58,6 +59,16 @@
 * You might have merge conflicts
     * Just imagine one peson worked on the same file as another person and Git doesn't know which modified version to use
 * Quite confusing when working with it the first time
+
+## Distributed vs Centralized Version Control System
+### Distributed (DVCS)
+* Every developer have an exact clone of the application in their own local computer which all came from a remote repository
+* Doesn't require constant internet connection/or a connection to the server to do some work
+## Centralized (CVCS)
+* There is only one copy of the application which exists on the cloud/server
+* Every developer can only commit changes to the remote repository and needs a connection to do so
+* Less hardware space is required since you don't have to clone the entire application to your computer
+    * But nowadays, programming is so space efficient that it doesn't really require that massive amount of space so cloning the entire application to your computer isn't that big of a deal
 
 ### Useful link to understand all the commands you can use with Git
 * [A nice game that visualize what Git does](https://learngitbranching.js.org/?locale=en_US)
