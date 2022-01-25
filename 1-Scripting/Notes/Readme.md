@@ -80,7 +80,8 @@
 * Git add . - Will add every file to staging (except ignored files)
 * Git commit - Records the changes to the repository
     * -m Will let us attach a message to that commit
-* Git branch - push the changes you made to a remote repo
+* Git branch - Will create, delete, or list branches for us
+* Git push - push the changes you made to a remote repo
 * Git pull - pull the changes made in your remote repo
 
 ### Useful link to understand all the commands you can use with Git
