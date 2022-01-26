@@ -18,6 +18,9 @@ while (repeat)
     
     switch (ans)
     {
+        case "SearchPokemon":
+            menu = new SearchPokemonMenu(new PokemonBL(new Repository()));
+            break;
         case "AddPokemon":
             menu = new AddPokeMenu(new PokemonBL(new Repository()));
             break;
@@ -29,6 +32,8 @@ while (repeat)
             break;
         default:
             Console.WriteLine("Page does not exist!");
+            Console.WriteLine("Please press Enter to continue");
+            Console.ReadLine();
             break;
     }
 }

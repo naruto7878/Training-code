@@ -33,14 +33,33 @@ namespace PokeBL
             List<Pokemon> listOfPoke = _repo.GetAllPokemon();
             if (listOfPoke.Count < 4)
             {
-                _repo.AddPokemon(p_poke);
+                return _repo.AddPokemon(p_poke);
             }
             else
             {
                 throw new Exception("You cannot have more than 4 pokemons!");
             }
+        }
 
-            return _repo.AddPokemon(p_poke);
+        public List<Pokemon> SearchPokemon(string p_name)
+        {
+            List<Pokemon> listOfPokemon = _repo.GetAllPokemon();
+
+
+            // LINQ library
+            return listOfPokemon
+                        .Where(poke => poke.Name.Contains(p_name)) //Where method is designed to filter a collection based on a condition
+                        .ToList(); //ToList method just converts into a list collection that our method needs to return
+
+            // foreach (Pokemon poke in listOfPokemon)
+            // {
+            //     if (poke.Name.Contains(p_name))
+            //     {
+            //         //Add to another list
+            //     }
+            // }
+
+            // //return the filtered/another list
         }
     }
 }
