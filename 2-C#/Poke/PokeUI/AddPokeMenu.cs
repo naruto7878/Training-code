@@ -35,7 +35,17 @@ namespace PokeUI
                 case "0":
                     return "MainMenu";
                 case "1":
-                    _pokeBL.AddPokemon(_newPoke);
+                    //Exception handling to have a better user experience
+                    try
+                    {
+                        _pokeBL.AddPokemon(_newPoke);
+                    }
+                    catch (System.Exception exc)
+                    {
+                        Console.WriteLine(exc.Message);
+                        Console.WriteLine("Please press Enter to continue");
+                        Console.ReadLine();
+                    }
                     return "MainMenu";
                 case "2":
                     Console.WriteLine("Please enter a level!");
