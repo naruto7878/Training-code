@@ -29,16 +29,18 @@ namespace PokeTest
         /// Checks validation for PP property with incorrect data
         /// Should throw an exception
         /// </summary>
-        [Fact]
-        public void PPShouldFailSetInvalidData()
+        [Theory] //Changes the unit test to be parameterized and run multiple data and ensure they all passes
+        [InlineData(-10)]
+        [InlineData(-100)]
+        [InlineData(-1293012)]
+        public void PPShouldFailSetInvalidData(int p_invalidPP)
         {
             //Arrange
             Ability abi = new Ability();
-            int invalidPP = -10;
 
             //Act & Assert
             Assert.Throws<System.Exception>(
-                () => abi.PP = invalidPP
+                () => abi.PP = p_invalidPP
             );
         }
     }
