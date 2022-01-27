@@ -113,6 +113,20 @@
 ### ArrayList
 * Works the same as a List but it is non-generic version of it
 
+# Conversion
+* C# is statically typed at compiled time. Meaning after a variable is declared, it cannot be declared again.
+* However, it is possible to change the variable type
+## Implicit Conversion
+* Generally, it is when you can convert the type without any data loss
+* Mostly used with numerical datatypes
+* No special syntax needed to write and compiler will do it for you
+* Ex: converting an int into a double
+## Explicit Conversion
+* If there is a risk of losing information, you must perform a **Cast**
+* Special syntax is needed to write to tell the compiler to do it anyway
+* Casting is denoted with (datatype)
+* Convert class is useful for converting a string datatype into another datatype
+
 # Exceptions
 * An exception is an event that occurs during the execution of a program that distrupts the normal flow of instructions
     * Horrible to encounter when presenting your program (When it is expected to work perfectly fine)
