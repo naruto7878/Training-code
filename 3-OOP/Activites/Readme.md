@@ -37,3 +37,63 @@
 ### Tips
 * Make sure your project 0 folder is not inside of another local repository that already exist (You should put it on a different folder)
 * Then follow the same steps located inside our first group activity
+
+# Phase 2
+## Complete Adding Customer function
+* Must have Adding Customer menu page completed before starting this step
+* Update BL and DL project to also save the customer to a database (A JSON file)
+1. Start with the DL project
+2. Create a repository interface and start listing potential methods you might need
+    * Be sure to add XML documentation
+3. Create a repository that inherits the interface and add the actual implementation detail to accomplish the task
+    * Just finish one method at a time and test if the method is working
+4. Go to the BL project
+5. Same workflow, create an interface and a class that inherits the interface
+6. Don't forget to include dependency injection in the constructor of class
+    * It makes it so when we update the DL project in the future, you don't have to change/refactor any of your other projects but just the DL project
+7. If needed, do further data processing within the method
+8. Go to the UI project
+9. Add dependency injection on the C# file responsible for displaying the add customer UI
+10. Update the UI to now store the customer information to the database
+11. Run application and check JSON file if it successfully saved their information
+
+### Things to consider
+* Data layer should be the only project that can exclusively manipulate our database
+* Business layer might do further processing or validation on the data it obtains from the Data Layer
+* Be sure to implement Dependency Injection right
+    * Will be extremely useful when we go around and updating our projects further
+* Don't forget that to reference other C# files from a different project you need to use a CLI command
+```
+dotnet add reference (project filepath)
+```
+* Proper documentation with XML comments
+
+# Phase 3
+## Add Search function
+* Not much different or drastic changes needed to your app architecture
+* Due to this reason, I'm sure you can figure it out or check my video on how I added search funtionality
+
+# Phase 4
+## Adding Logging functionality to your program
+* Make sure you have a functional AddCustomer first
+* We will log information based on what the user is doing in our application
+    * There are other ways to log information but that will be the premise we will start with
+* You can have logger on the different projects if you want, but you can strictly just have logging in the UI project
+1. Make sure you have installed the proper packages needed to accomplish this specifically inside of the UI project
+```
+dotnet add package Serilog
+dotnet add package Serilog.Sinks.File
+```
+* You can confirm if you installed the right packages by looking at the .csproj file
+2. Update your program.cs file with creating and configuring the logger
+    * Code should look similar to what I did on the demo
+    * Make sure to use Serilog namespace for intellisense to detect and work properly
+3. Start logging!
+    * Log information to where it makes sense to do so
+    * What is currently being displayed
+    * What is the function the user is trying to do
+    * Any potential warning/validation displayed to the user due to the user putting in the wrong thing
+    * etc.
+
+# Phase 5
+## 
