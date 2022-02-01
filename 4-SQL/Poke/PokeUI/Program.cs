@@ -27,11 +27,11 @@ while (repeat)
     {
         case "SearchPokemon":
             Log.Information("Displaying SearchPokemon Menu to user");
-            menu = new SearchPokemonMenu(new PokemonBL(new Repository()));
+            menu = new SearchPokemonMenu(new PokemonBL(new SQLRepository()));
             break;
         case "AddPokemon":
             Log.Information("Displaying AddPokemon Menu to user");
-            menu = new AddPokeMenu(new PokemonBL(new Repository()));
+            menu = new AddPokeMenu(new PokemonBL(new SQLRepository()));
             break;
         case "MainMenu":
             Log.Information("Displaying MainMenu to user");

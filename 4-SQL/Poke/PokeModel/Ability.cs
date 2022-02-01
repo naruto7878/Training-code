@@ -2,6 +2,8 @@ namespace PokeModel
 {
     public class Ability
     {
+        //Act as the primary key
+        public int AbId { get; set; }
         public string Name { get; set; }
 
         //Full property is needed to add validation

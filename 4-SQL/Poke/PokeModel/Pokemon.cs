@@ -2,6 +2,8 @@
 {
     public class Pokemon
     {
+        //Acts as our primary key
+        public int PokeId { get; set; }
         public string Name { get; set; }
         public int Level { get; set; }
         public int Attack { get; set; }
