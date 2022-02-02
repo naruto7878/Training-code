@@ -5,6 +5,14 @@ namespace PokeDL
 {
     public class SQLRepository : IRepository
     {
+        //SQLRepository now requires you to provide a connectionstring to an existing database to create an object out of it
+        //It will also allow SQLRepository to dynamically point to different databases as long as you have the connection string fo rit
+        private readonly string _connectionStrings;
+        public SQLRepository(string p_connectionStrings)
+        {
+            _connectionStrings = p_connectionStrings;
+        }
+
         public Pokemon AddPokemon(Pokemon p_poke)
         {
             //@ before the string will ignore special characters like \n
@@ -16,7 +24,7 @@ namespace PokeDL
             //using block is different from our normal using statement
             //It is used to automatically close any resource you stated inside of the parenthesis
             //If an exception occurs, it will still automatically close any resources
-            using (SqlConnection con = new SqlConnection("PUT YOUR CONNECTION STRING HERE"))
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
             {
                 //Opens the connection to the database
                 con.Open();
@@ -43,7 +51,7 @@ namespace PokeDL
 
             string sqlQuery = @"select * from Pokemon";
 
-            using (SqlConnection con = new SqlConnection("PUT YOUR CONNECTION STRING HERE"))
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
             {
                 //Opens connection to the database
                 con.Open();

@@ -211,3 +211,15 @@ Level: 40
 Attack: 55
 Defense: 50
 Health: 49
+2022-02-02 10:53:33.338 -05:00 [INF] Displaying SearchPokemon Menu to user
+2022-02-02 10:53:50.968 -05:00 [INF] Displaying MainMenu to user
+2022-02-02 10:54:50.996 -05:00 [INF] Displaying AddPokemon Menu to user
+2022-02-02 10:54:52.273 -05:00 [INF] Adding pokemon 
+Name: Ditto
+Level: 1
+Attack: 55
+Defense: 55
+Health: 55
+2022-02-02 10:54:52.293 -05:00 [WRN] Failed to add pokemon due to reaching total capacity (4)
+2022-02-02 10:54:54.781 -05:00 [INF] Displaying MainMenu to user
+2022-02-02 10:54:56.016 -05:00 [INF] Exiting application
