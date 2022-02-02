@@ -41,6 +41,11 @@ namespace PokeBL
             }
         }
 
+        public List<Pokemon> GetAllPokemon()
+        {
+            return _repo.GetAllPokemon();
+        }
+
         public List<Pokemon> SearchPokemon(string p_name)
         {
             List<Pokemon> listOfPokemon = _repo.GetAllPokemon();

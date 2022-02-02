@@ -223,3 +223,12 @@ Health: 55
 2022-02-02 10:54:52.293 -05:00 [WRN] Failed to add pokemon due to reaching total capacity (4)
 2022-02-02 10:54:54.781 -05:00 [INF] Displaying MainMenu to user
 2022-02-02 10:54:56.016 -05:00 [INF] Exiting application
+2022-02-02 16:08:56.181 -05:00 [INF] Exiting application
+2022-02-02 16:14:58.530 -05:00 [INF] Exiting application
+2022-02-02 16:21:18.862 -05:00 [INF] Displaying AddPokemon Menu to user
+2022-02-02 16:21:20.188 -05:00 [INF] Displaying MainMenu to user
+2022-02-02 16:21:20.893 -05:00 [INF] Displaying SearchPokemon Menu to user
+2022-02-02 16:21:22.957 -05:00 [INF] Displaying SearchPokemon Menu to user
+2022-02-02 16:21:23.905 -05:00 [INF] Displaying MainMenu to user
+2022-02-02 16:21:31.566 -05:00 [INF] Displaying MainMenu to user
+2022-02-02 16:21:32.486 -05:00 [INF] Exiting application
