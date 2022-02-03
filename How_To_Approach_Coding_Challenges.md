@@ -67,7 +67,7 @@ Most platforms have a way for you to run your code and test whether you have pas
 When you first solve the problem, it is best to take the approach that is easiest to understand and write code for. However, this may not be the fastest or most efficient way to solve the problem. Often, you can find a better solution. Once you have a working solution, you can explore other ways you may have solved the problem.
 
 For example, in our current solution, we have to complete two loops over two different arrays. We can reduce this to a single pass over the array if we compute a running sum as we iterate. We should also handle the edge case of an empty array:
-```java
+```C#
 public int findAverageStrLength(String[] arr) {
   if (arr.length == 0) return 0;
   int[] strLengths= new int[arr.length]; // initialize array for string lengths
