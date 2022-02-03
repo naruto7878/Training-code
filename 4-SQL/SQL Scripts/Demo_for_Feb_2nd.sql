@@ -22,7 +22,7 @@ values('John Doe', 65000),
 	('Ollie Abbott', 80000),
 	('Emanual Dean', 110000),
 	('Ernest Rowe', 55000),
-	('Janice Oliver', 66000);
+	('Janice Oliver', 65000);
 
 insert into Department
 values ('Software Engineer'),
