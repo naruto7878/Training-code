@@ -16,6 +16,7 @@ alter table Pokemon
 drop column alive
 
 --Truncate statement
+truncate table Pokemon
 
 --Drop statement
 drop table Pokemon
