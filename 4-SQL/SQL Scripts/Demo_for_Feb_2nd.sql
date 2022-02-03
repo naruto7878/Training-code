@@ -34,23 +34,3 @@ values (1,1),
 	(3,2),
 	(4,1),
 	(5,1);
-
------- Subquery --------
-
---I want to take the average of all software engineer's salary
-select avg(e.empSalary) as 'Average Software Engineer Salary' from Employee e 
-inner join employees_departments ed on e.empId = ed.empId 
-inner join Department d on d.depId = ed.depId 
-where d.depName = 'Software Engineer';
-
---I want to select every software engineer that have a higher than average software engineer
---Seems like a very simple question but got really complicated real fast
---With subquery it is just better to run the query first and then copy and paste where required
-select e.empName, e.empSalary from Employee e
-inner join employees_departments ed on e.empId = ed.empId 
-inner join Department d on d.depId = ed.depId 
-where d.depName = 'Software Engineer' and e.empSalary > 
-(select avg(e.empSalary) from Employee e 
-inner join employees_departments ed on e.empId = ed.empId 
-inner join Department d on d.depId = ed.depId 
-where d.depName = 'Software Engineer');
