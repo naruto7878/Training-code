@@ -40,17 +40,17 @@ Before you write any code, write down the steps you'll need to complete the solu
 
 Translate the steps you've identified above into code which does that step. For example, for step (A) above you may realize you need to write a for loop to iterate through the array.
 
-```java
-public int findAverageStrLength(String[] arr) { 
-  int[] strLengths = new int[arr.length]; // initialize array for string lengths
-  for (int x = 0; x < arr.length; x++) { 
-    strLengths[x] = arr[x].length; // put length of each string in the new array
+```C#
+public int findAverageStrCount(string[] arr) { 
+  int[] strLengths = new int[arr.Count]; // initialize array for string lengths
+  for (int x = 0; x < arr.Count; x++) { 
+    strLengths[x] = arr[x].Count; // put length of each string in the new array
   } 
   int sum = 0;
-  for (int y = 0; y < strLengths.length; y++) { 
+  for (int y = 0; y < strLengths.Count; y++) { 
     sum += lengths[y]; // compute the sum of the string lengths
   } 
-  return sum / strLengths.length; // compute & return the average
+  return sum / strLengths.Count; // compute & return the average
 }
 ```
 
@@ -68,12 +68,12 @@ When you first solve the problem, it is best to take the approach that is easies
 
 For example, in our current solution, we have to complete two loops over two different arrays. We can reduce this to a single pass over the array if we compute a running sum as we iterate. We should also handle the edge case of an empty array:
 ```C#
-public int findAverageStrLength(String[] arr) {
-  if (arr.length == 0) return 0;
-  int[] strLengths= new int[arr.length]; // initialize array for string lengths
+public int findAverageStrLength(string[] arr) {
+  if (arr.Count == 0) return 0;
+  int[] strLengths= new int[arr.Count]; // initialize array for string lengths
   int runningSum = 0;
-  for (int x = 0; x < arr.length; x++) {
-    int strLength = arr[x].length; // put length of each string in the new array
+  for (int x = 0; x < arr.Count; x++) {
+    int strLength = arr[x].Count; // put length of each string in the new array
     runningSum += strLength;
   }
   return runningSum / arr.length;
