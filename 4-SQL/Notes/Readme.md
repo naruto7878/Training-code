@@ -153,15 +153,16 @@
 * A class that is used to read what is exactly given to you when you execute a SQL statement
 * Since C# only understands classes and objects while SQL only understands tables, this class is the middle man that will provide the conversion tools required to convert SQL datatypes to C# datatypes
 * You still have to map things manually but at least you can grab the data and convert it into datatypes that C# understands
-### DataSet
-* This is the actual model that SQLDataReader uses to grab a "table" in C#
-* You can think of it as a representation of a table in SQL but in C#
 
 ## SqlDataAdapter
 * A class that we don't need to use but it is the actual class that stores information in a DataSet after grabbing information from a database
 * Not only that, it can also perform some query statements to also update the database (It is like a 2 in 1 a combination between SqlDataReader and SqlCommand)
 * Difference is it stores the info in a Dataset and follows the disconnect architecture type
 * Essentially it is the translator that converts SQL table into C# object (which is the DataSet)
+    * With added benefit of also performing some database operations as well
+### DataSet
+* This is the actual model that SqlDataAdapter uses to store a "table" in C#
+* You can think of it as a representation of a in-memory table in SQL but in C#
 
 # Architecture of ADO.NET
 * Ha! I scared you there for a second, no we don't need to know another architecture and how they structured and make ADO.net work
