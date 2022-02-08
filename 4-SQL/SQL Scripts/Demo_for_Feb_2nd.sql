@@ -139,3 +139,68 @@ select d.depName from Department d
 select d.depName from Department d
 intersect
 select d.depName from Department d
+
+--- Stored Procedure ---
+-- Almost like a function except it has certain unique things about
+-- You can return multiple things unlike C# methods
+	-- It can accept input parameters and multiple output parameters
+-- It can output multiple datatypes
+-- You can have optional parameters
+
+--Add data depending on what was given
+alter procedure proc_addData(
+	@name varchar(50) = null,
+	@salary smallmoney = 10, -- By adding "=" I have made this parameter optional
+	@department varchar(50) = null,
+	@status bit output -- By adding output keyword, this parameter will return back after executing the procedure
+)
+AS 
+BEGIN
+	--Adds data to Employee table if employee name was given
+	--When comparing with a null value, you have to use is/is not null
+	--When comparing with a normal value, you can use != or <>
+	if(@name is not null)
+	BEGIN
+		insert into Employee 
+		values(@name, @salary);
+		set @status = 1;
+	END
+	
+	--Adds data to Department table if department name was given
+	if(@department is not null)
+	begin
+		insert into Department 
+		values(@department);
+		set @status = 1;
+	end
+	
+	--Status fails if both optional parameters was not given
+	if(@name is null)
+	begin
+		if(@department is null)
+		begin
+			set @status = 0;
+		end
+	end
+END;
+
+declare @currentStatus bit;
+declare @moneys smallmoney = 100000.0000;
+exec proc_addData @status = @currentStatus output
+select @currentStatus;
+
+--- Triggers ---
+--They are a special type of stored procedure
+--They will run when a certain event happens such as insert, update, delete, or etc.
+
+
+create trigger trig_employee_added on Employee
+After insert
+AS
+BEGIN
+	update Employee 
+	set empSalary = empSalary - 1000;
+END;
+
+insert into Employee 
+values('Terrance', 500);
