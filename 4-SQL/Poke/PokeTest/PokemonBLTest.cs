@@ -31,15 +31,16 @@ namespace PokeTest
             //In this way, we guaranteed that our dependency will always work so if something goes wrong it is the business layer's fault
             mockRepo.Setup(repo => repo.GetAllPokemon()).Returns(expectedListOfPoke);
 
+            //We passed in the mock version of IRepository
             IPokemonBL pokeBL = new PokemonBL(mockRepo.Object);
 
             //Act
             List<Pokemon> actualListOfPoke = pokeBL.GetAllPokemon();
 
             //Assert
-            Assert.Same(expectedListOfPoke, actualListOfPoke);
-            Assert.Equal(pokeName, actualListOfPoke[0].Name);
-            Assert.Equal(pokeLevel, actualListOfPoke[0].Level);
+            Assert.Same(expectedListOfPoke, actualListOfPoke); //Checks if both list are the same thing
+            Assert.Equal(pokeName, actualListOfPoke[0].Name); //Checks the first element of actualListOfPoke to have the same name
+            Assert.Equal(pokeLevel, actualListOfPoke[0].Level); //Checks the first element of actualListOfPoke to have teh same level
         }
     }
 }
