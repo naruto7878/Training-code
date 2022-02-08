@@ -158,7 +158,9 @@
 * You can think of it as a representation of a table in SQL but in C#
 
 ## SqlDataAdapter
-* A class that we don't need to use (mostly because the other classes I stated above already uses this class to do their operations) but it is the actual class that stores information in a DataSet after grabbing information from a database
+* A class that we don't need to use but it is the actual class that stores information in a DataSet after grabbing information from a database
+* Not only that, it can also perform some query statements to also update the database (It is like a 2 in 1 a combination between SqlDataReader and SqlCommand)
+* Difference is it stores the info in a Dataset and follows the disconnect architecture type
 * Essentially it is the translator that converts SQL table into C# object (which is the DataSet)
 
 # Architecture of ADO.NET
@@ -167,9 +169,11 @@
 ## Connected Architecture
 * Your application has a constant connection to a database
     * At its core that is really all this means
-* As a programmer, that means utilizing SqlConnection class so we are doing connected architecture
-    * Remember .Open() method? Yeah that means we have an active connection
+* As a programmer, that means utilizing SqlConnection, SqlCommand, and (optional) SqlDataReader class so we are doing connected architecture
+    * Remember .Open() method? Yeah that initiates a constant connection to the database
 ## Disconnected Architecture
 * Your application only establishes a connection if it needs something with the database
 * As a programmer, you need to utilize SqlDataAdapter class instead 
+    * It still needs SqlConnection class to dictate what database you are trying to do operations on
+        * However, you don't need to use .Open() method
     * Feel free to look up what that code looks like but we don't need to apply it
