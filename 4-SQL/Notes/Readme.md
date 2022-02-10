@@ -264,7 +264,7 @@ CREATE TABLE Person (
 * Rarely used because it can lead to massive amount of **data inconsistency**
 * Ex:
     Imagine a scenario of 50 tables all referencing one table. You did cascading delete operation and now all those 50 tables have NULL values and trying to clean your database will be a massive hassle. 
-* It is possible to also just delete the row instead of putting NULL values but then that leads to massive lost of information so... lose lose situation either way
+* It is possible to also just delete the row instead of putting NULL values but then that leads to massive lose of information so... lose lose situation either way
 ## Indexing
 * Didn't go over because it is also not relevant in our case but really useful when your database have 50 tables
 * It is just a way to query data really fast from the database by... cheating almost
