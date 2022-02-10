@@ -42,6 +42,13 @@
 1. Type - Restricts what datatype you can store in a column
 2. Unique - Every data in a column cannot have repeating values
 3. Not null - Ensures every data in a column must have a value
+4. Check - Adds an extra condition on the data
+    * Ex: age column must be above 18
+```SQL
+CREATE TABLE Person (
+    Age int CHECK (Age >= 18)
+)
+```
 4. Primary Key
     * Implicitly Unique and Not null
     * Acts as the unique identifier for the rows in a table
@@ -112,6 +119,11 @@
     * from clause if you want to select from a filtered table
     * where clause if you want to select some data and use it as a way to filter your data
 * Subqueries are inside of '()' syntax
+
+# Common Table Expression (CTE)
+* Creating a temporary table in SQL to do some operations on
+* Almost the same as a subquery but it generates a temporary table
+* Seems very useless to us (because it is at the moment) but more complex databases that have 30-50 tables can make temporary tables extremely useful to save work and rewriting the same join statement 50 times
 
 # Set Operations
 * Special type of join
