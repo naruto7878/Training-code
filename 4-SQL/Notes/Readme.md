@@ -249,6 +249,13 @@ CREATE TABLE Person (
     * Meaning it either executes all of the query statements or none at all
 * A design pattern that follows the Atomicity property to prevent **Data inconsistency**
 
+# Mocking
+* An important aspect of unit testing as your classes become more complex
+* Essentially, when you unit test a single class you have to make sure that any problem that arises, it is solely because of that class fault
+    * Unfortunately, this isn't the case when a class starts to depend on another class to even work
+* Introduce Mocking, we make it so we imitate any dependencies that class have in order to guarantee they will always work. In this way, if your unit tests fails it because of the class itself and nothing else
+* We use the Moq external package to imitate our dependencies and for our example, we made them gaurantee to always return something (in this way the mock object will always work)
+
 # Things I didn't go over but QC might ask
 * Main reason I didn't go over it because using it can lead to so many data inconsistency if used improperly
 ## Cascading delete
