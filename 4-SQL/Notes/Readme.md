@@ -49,10 +49,10 @@ CREATE TABLE Person (
     Age int CHECK (Age >= 18)
 )
 ```
-4. Primary Key
+5. Primary Key
     * Implicitly Unique and Not null
     * Acts as the unique identifier for the rows in a table
-5. Foreign Key
+6. Foreign Key
     * Data in this column references the primary key of another table
     * Establishes relationships between 2 columns in the same table or different tables
 
@@ -144,6 +144,19 @@ CREATE TABLE Person (
 
 ## Intersect
 * It will show only duplicated values once from both queries
+
+# Procedures
+* Almost the same as the methods in C# but has certain unique characteristics
+* Like a method, it can accept input parameters but it can also output multiple parameters
+* Essentially, it can return **multiple datatypes**
+* You can also have optional parameters
+* Like a method, it is reusable
+
+# Triggers
+* They are a special type of procedure that will run when a certain event happens such as insert, update, or delete
+* You can specify when you want the trigger to happen such as:
+    * After/For - execute trigger after the event
+    * Instead of - executes the trigger's operation instead of the event
 
 # ACID
 * A set of properties of database transaction that is intended to guarantee validity even in the event of catostrophic error or system failures
