@@ -222,3 +222,17 @@
     * It still needs SqlConnection class to dictate what database you are trying to do operations on
         * However, you don't need to use .Open() method
     * Feel free to look up what that code looks like but we don't need to apply it
+
+# Moar Design Patterns
+* Because we have 99 problems with coding but design patterns won't be one
+## Repository Design Pattern
+* When your application has a layer between your actual application and your database using interface or abstraction for accessing the database directly
+    * We already implemented it and it is our Data Layer project
+* Essentially, we have a middle man between your app and the database that has a sole responsiblity of anything data accessing to the database
+* Since we use abstraction, nothing will "break" when updating just your data layer and you can use as many C# files that can tap to multiple data source, tables, etc.
+## Unit of Work Design Pattern
+* For the most part, your repository should only have simple CRUD operations that messes with the database
+* Any "complex" operations that require more than one CRUD operations from the repository should be handled in the Unit of Work layer (our BL)
+* This is another layer that is before your application and it's sole responsiblility is to act like a **transaction**
+    * Meaning it either executes all of the query statements or none at all
+* A design pattern that follows the Atomicity property to prevent **Data inconsistency**
