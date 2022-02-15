@@ -35,5 +35,10 @@ namespace PokeDL
             //Deserialize the jsonString into a List<Pokemon> object and return it
             return JsonSerializer.Deserialize<List<Pokemon>>(_jsonString);
         }
+
+        public Pokemon UpdatePokemon(Pokemon p_poke)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

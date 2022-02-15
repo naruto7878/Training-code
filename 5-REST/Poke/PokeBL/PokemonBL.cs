@@ -30,15 +30,15 @@ namespace PokeBL
             p_poke.Health += rand.Next(-5,5);
 
             //Validation process
-            List<Pokemon> listOfPoke = _repo.GetAllPokemon();
-            if (listOfPoke.Count < 4)
-            {
+            // List<Pokemon> listOfPoke = _repo.GetAllPokemon();
+            // if (listOfPoke.Count < 4)
+            // {
                 return _repo.AddPokemon(p_poke);
-            }
-            else
-            {
-                throw new Exception("You cannot have more than 4 pokemons!");
-            }
+            // }
+            // else
+            // {
+            //     throw new Exception("You cannot have more than 4 pokemons!");
+            // }
         }
 
         public List<Ability> GetAbilitiesByPokeId(int p_pokeId)
@@ -70,6 +70,11 @@ namespace PokeBL
             // }
 
             // //return the filtered/another list
+        }
+
+        public Pokemon UpdatePokemon(Pokemon p_poke)
+        {
+            return _repo.UpdatePokemon(p_poke);
         }
     }
 }

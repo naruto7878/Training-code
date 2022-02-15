@@ -18,8 +18,8 @@ namespace PokeDL
             //@ before the string will ignore special characters like \n
             //This is where you specify the sql statement required to do whatever operation you need based on the method
             //
-            string sqlQuery = @"insert into Pokemon 
-                            values(@pokeName, @pokeLevel, @pokeAttack, @pokeDefense,@pokeHealth)";
+            string sqlQuery = @"insert into Pokemon (pokeName, pokeAttack, pokeDefense, pokeHealth)
+                            values(@pokeName, @pokeAttack, @pokeDefense,@pokeHealth)";
 
             //using block is different from our normal using statement
             //It is used to automatically close any resource you stated inside of the parenthesis
@@ -33,7 +33,6 @@ namespace PokeDL
                 //Command will how the sqlQuery that will execute on the currently connection we have in the con object
                 SqlCommand command = new SqlCommand(sqlQuery, con);
                 command.Parameters.AddWithValue("@pokeName", p_poke.Name);
-                command.Parameters.AddWithValue("@pokeLevel", p_poke.Level);
                 command.Parameters.AddWithValue("@pokeAttack", p_poke.Attack);
                 command.Parameters.AddWithValue("@pokeDefense", p_poke.Defense);
                 command.Parameters.AddWithValue("@pokeHealth", p_poke.Health);
@@ -78,6 +77,34 @@ namespace PokeDL
             return listOfAbility;
         }
 
+        public Pokemon UpdatePokemon(Pokemon p_poke)
+        {
+            string sqlQuery = @"UPDATE Pokemon
+                            SET pokeName=@name, pokeAttack=@attack, pokeDefense=@defense, pokeHealth=@health
+                            WHERE pokeId=@id;";
+
+            using (SqlConnection con = new SqlConnection(_connectionStrings))
+            {
+                con.Open();
+
+                SqlCommand com = new SqlCommand(sqlQuery, con);
+
+                com.Parameters.AddWithValue("@name", p_poke.Name);
+                
+                com.Parameters.AddWithValue("@attack", p_poke.Attack);
+                
+                com.Parameters.AddWithValue("@defense", p_poke.Defense);
+                
+                com.Parameters.AddWithValue("@health", p_poke.Health);
+                
+                com.Parameters.AddWithValue("@id", p_poke.PokeId);
+
+                com.ExecuteNonQuery();
+            }
+
+            return p_poke;
+        }
+
         public List<Pokemon> GetAllPokemon()
         {
             List<Pokemon> listOfPokemon = new List<Pokemon>();
@@ -107,8 +134,8 @@ namespace PokeDL
                         Level = reader.GetInt32(2),
                         Attack = reader.GetInt32(3),
                         Defense = reader.GetInt32(4),
-                        Health = reader.GetInt32(5),
-                        Abilities = GetAbilitiesByPokeId(reader.GetInt32(0))
+                        Health = reader.GetInt32(5)
+                        // Abilities = GetAbilitiesByPokeId(reader.GetInt32(0))
                     });
                 }
             }

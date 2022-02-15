@@ -36,6 +36,8 @@ namespace PokeBL
         /// <param name="p_pokeId">The Id of the pokemon it will search</param>
         /// <returns>list collection that holds ability objects</returns>
         List<Ability> GetAbilitiesByPokeId(int p_pokeId);
+
+        Pokemon UpdatePokemon(Pokemon p_poke);
     }
 }
 

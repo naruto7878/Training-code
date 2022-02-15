@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PokeBL;
+using PokeModel;
 
 /*
     Auto generate by utilizing aspnet-codegenerator tool
@@ -41,8 +42,11 @@ namespace PokeApi.Controllers
             _pokeBL = p_pokeBL;
         }
 
-        // GET: api/Pokemon
-        [HttpGet]
+        /*
+            [HttpGet] data annotation basically tells the compiler that the method will be an action inside of a controller
+            specifically this will handle a GET request from the client and send a http response
+        */
+        [HttpGet("GetAll")]
         public IActionResult GetAllPokemon()
         {
             try
@@ -57,29 +61,64 @@ namespace PokeApi.Controllers
             }
         }
 
-        // GET: api/Pokemon/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        /*
+            Parameterized action will help you get information from the client and to do some process based on that action
+            You have to use "{nameOfParameter}" to specify what you need
+            Don't forget to put it as a parameter on the action with the appropriate datatype
+        */
+        [HttpGet("{pokeName}")]
+        public IActionResult GetPokemonByName(string pokeName)
         {
-            return "value";
+            try
+            {
+                return Ok(_pokeBL.SearchPokemon(pokeName));
+            }
+            catch (System.Exception)
+            {
+                return NotFound();
+            }
         }
 
-        // POST: api/Pokemon
-        [HttpPost]
-        public void Post([FromBody] string value)
+        /*
+            [FromBody] data annotation specifies that this action will look inside of the HTTP request body (which is in a json format) to grab the information it needs
+            Usually helpful for large amount of data (creating an account)
+
+            [HttpPost] This action will handle any post request from the client 
+        */
+        [HttpPost("Add")]
+        public IActionResult Post([FromBody] Pokemon p_poke)
         {
+            try
+            {
+                return Created("Successfully added",_pokeBL.AddPokemon(p_poke));
+            }
+            catch (System.Exception ex)
+            {
+                return Conflict(ex.Message);
+            }
         }
 
         // PUT: api/Pokemon/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("Update/{id}")]
+        public IActionResult Put(int id, [FromBody] Pokemon p_poke)
         {
+            p_poke.PokeId = id;
+
+            try
+            {
+                return Ok(_pokeBL.UpdatePokemon(p_poke));
+            }
+            catch (System.Exception ex)
+            {
+                return Conflict(ex.Message);
+            }
         }
 
         // DELETE: api/Pokemon/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+
         }
     }
 }
