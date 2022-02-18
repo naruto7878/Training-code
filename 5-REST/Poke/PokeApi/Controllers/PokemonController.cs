@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using PokeBL;
 using PokeModel;
 
@@ -32,14 +33,17 @@ using PokeModel;
 
 namespace PokeApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]")] //This is used to configure the endpoints of all the actions inside of this controller
     [ApiController]
     public class PokemonController : ControllerBase
     {
         private IPokemonBL _pokeBL;
-        public PokemonController(IPokemonBL p_pokeBL)
+        private IMemoryCache _memoryCache;
+
+        public PokemonController(IPokemonBL p_pokeBL, IMemoryCache p_memoryCache)
         {
             _pokeBL = p_pokeBL;
+            _memoryCache = p_memoryCache;
         }
 
         /*
@@ -47,11 +51,19 @@ namespace PokeApi.Controllers
             specifically this will handle a GET request from the client and send a http response
         */
         [HttpGet("GetAll")]
-        public IActionResult GetAllPokemon()
+        public async Task<IActionResult> GetAllPokemonAsync()
         {
             try
             {
-                return Ok(_pokeBL.GetAllPokemon());
+                List<Pokemon> listOfPoke = new List<Pokemon>();
+                //TryGetValue(checks if the cache still exists and if it does "out listOfPoke" puts that data inside our variable)
+                if (!_memoryCache.TryGetValue("pokeList", out listOfPoke))
+                {
+                    listOfPoke = await _pokeBL.GetAllPokemonAsync();
+                    _memoryCache.Set("pokeList", listOfPoke, new TimeSpan(0,0,30));
+                }
+                
+                return Ok(listOfPoke);
             }
             catch (SqlException)
             {
@@ -86,7 +98,7 @@ namespace PokeApi.Controllers
             [HttpPost] This action will handle any post request from the client 
         */
         [HttpPost("Add")]
-        public IActionResult Post([FromBody] Pokemon p_poke)
+        public IActionResult AddPokemon([FromBody] Pokemon p_poke)
         {
             try
             {

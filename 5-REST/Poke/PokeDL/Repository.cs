@@ -36,6 +36,11 @@ namespace PokeDL
             return JsonSerializer.Deserialize<List<Pokemon>>(_jsonString);
         }
 
+        public Task<List<Pokemon>> GetAllPokemonAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public Pokemon UpdatePokemon(Pokemon p_poke)
         {
             throw new NotImplementedException();

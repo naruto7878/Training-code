@@ -30,6 +30,8 @@ namespace PokeBL
         /// <returns>list collection with pokemon objects</returns>
         List<Pokemon> GetAllPokemon();
 
+        Task<List<Pokemon>> GetAllPokemonAsync();
+
         /// <summary>
         /// Will give a list of abilities from a pokemon
         /// </summary>
@@ -38,6 +40,8 @@ namespace PokeBL
         List<Ability> GetAbilitiesByPokeId(int p_pokeId);
 
         Pokemon UpdatePokemon(Pokemon p_poke);
+
+
     }
 }
 

@@ -24,6 +24,8 @@ namespace PokeDL
         /// <returns>Returns a list collection of Pokemon objects</returns>
         List<Pokemon> GetAllPokemon();
 
+        Task<List<Pokemon>> GetAllPokemonAsync();
+
         /// <summary>
         /// Will give a list of abilities from a pokemon
         /// </summary>
