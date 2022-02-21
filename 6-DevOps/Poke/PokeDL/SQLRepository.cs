@@ -18,8 +18,8 @@ namespace PokeDL
             //@ before the string will ignore special characters like \n
             //This is where you specify the sql statement required to do whatever operation you need based on the method
             //
-            string sqlQuery = @"insert into Pokemon (pokeName, pokeAttack, pokeDefense, pokeHealth)
-                            values(@pokeName, @pokeAttack, @pokeDefense,@pokeHealth)";
+            string sqlQuery = @"insert into Pokemon
+                            values(@pokeName, @pokeAttack, @pokeDefense,@pokeHealth, @pokeSpeed, @pokeType)";
 
             //using block is different from our normal using statement
             //It is used to automatically close any resource you stated inside of the parenthesis
@@ -36,6 +36,8 @@ namespace PokeDL
                 command.Parameters.AddWithValue("@pokeAttack", p_poke.Attack);
                 command.Parameters.AddWithValue("@pokeDefense", p_poke.Defense);
                 command.Parameters.AddWithValue("@pokeHealth", p_poke.Health);
+                command.Parameters.AddWithValue("@pokeSpeed", p_poke.Speed);
+                command.Parameters.AddWithValue("@pokeType", p_poke.Type);
 
                 //Executes the SQL statement
                 command.ExecuteNonQueryAsync();
@@ -131,10 +133,11 @@ namespace PokeDL
                         //Zero-based column index
                         PokeId = reader.GetInt32(0), //It will get column PokeId since that is the very first column of our select statement
                         Name = reader.GetString(1), //it will get the pokeName column since it is the second column of our select statement
-                        Level = reader.GetInt32(2),
-                        Attack = reader.GetInt32(3),
-                        Defense = reader.GetInt32(4),
-                        Health = reader.GetInt32(5)
+                        Attack = reader.GetInt32(2),
+                        Defense = reader.GetInt32(3),
+                        Health = reader.GetInt32(4),
+                        Speed = reader.GetInt32(5),
+                        Type = reader.GetString(6)
                         // Abilities = GetAbilitiesByPokeId(reader.GetInt32(0))
                     });
                 }
@@ -163,16 +166,17 @@ namespace PokeDL
 
                 //Read() methods checks if you have more rows to go through
                 //If there is another row = true, if not = false
-                while (await reader.ReadAsync())
+                while (reader.Read())
                 {
                     listOfPokemon.Add(new Pokemon(){
                         //Zero-based column index
                         PokeId = reader.GetInt32(0), //It will get column PokeId since that is the very first column of our select statement
                         Name = reader.GetString(1), //it will get the pokeName column since it is the second column of our select statement
-                        Level = reader.GetInt32(2),
-                        Attack = reader.GetInt32(3),
-                        Defense = reader.GetInt32(4),
-                        Health = reader.GetInt32(5)
+                        Attack = reader.GetInt32(2),
+                        Defense = reader.GetInt32(3),
+                        Health = reader.GetInt32(4),
+                        Speed = reader.GetInt32(5),
+                        Type = reader.GetString(6)
                         // Abilities = GetAbilitiesByPokeId(reader.GetInt32(0))
                     });
                 }

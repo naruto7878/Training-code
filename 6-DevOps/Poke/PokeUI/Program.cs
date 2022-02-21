@@ -4,6 +4,7 @@ global using Serilog;//global using will implicitly import that namespace to the
 using Microsoft.Extensions.Configuration;
 using PokeBL;
 using PokeDL;
+using PokeModel;
 using PokeUI;
 
 // Console.WriteLine("Hello, World!");
@@ -18,6 +19,10 @@ Log.Logger = new LoggerConfiguration()
 bool repeat = true;
 IMenu menu = new MainMenu();
 FactoryMenu factory = new FactoryMenu();
+
+Pokemon poke = new Pokemon();
+poke.Name = "12937";
+
 
 while (repeat)
 {

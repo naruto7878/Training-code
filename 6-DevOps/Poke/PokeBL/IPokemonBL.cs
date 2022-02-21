@@ -40,6 +40,7 @@ namespace PokeBL
         List<Ability> GetAbilitiesByPokeId(int p_pokeId);
 
         Pokemon UpdatePokemon(Pokemon p_poke);
+        
 
 
     }

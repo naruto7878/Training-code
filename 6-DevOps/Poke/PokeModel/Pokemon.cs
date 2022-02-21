@@ -1,14 +1,34 @@
-﻿namespace PokeModel
+﻿using System.Text.RegularExpressions;
+
+namespace PokeModel
 {
     public class Pokemon
     {
         //Acts as our primary key
         public int PokeId { get; set; }
-        public string Name { get; set; }
+        private string _name;
+        public string Name
+        {
+            get { return _name; }
+            set {
+                    if (Regex.IsMatch(value, @"^[a-zA-Z]+$"))
+                    {
+                        _name = value; 
+                    }
+                    else
+                    {
+                        throw new Exception("Cannot have numbers in the name");
+                    }
+                }
+        }
+        
+        
         public int Level { get; set; }
         public int Attack { get; set; }
         public int Defense { get; set; }
         public int Health { get; set; }
+        public int Speed { get; set; }
+        public string Type { get; set; }
 
         //Full properties are required to do validation
         private List<Ability> _abilities;
