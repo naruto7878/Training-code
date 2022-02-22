@@ -8,3 +8,7 @@
 * Added the art style
 * Abilities
 * Overpowered tool kit
+
+# Stealth Mechanic
+* Unfair to play against
+* Too bad for everyone else
