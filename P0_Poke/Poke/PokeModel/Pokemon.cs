@@ -36,11 +36,11 @@
                 }
                 else if (value.Count == 0)
                 {
-                    throw new Exception("A pokemon must have 1 ability");
+                    throw new ValidationException("A pokemon must have 1 ability");
                 }
                 else
                 {
-                    throw new Exception("A pokemon can only have 4 abilities");
+                    throw new ValidationException("A pokemon can only have 4 abilities");
                 }
             }
         }

@@ -28,7 +28,7 @@ namespace PokeModel
                 }
                 else
                 {
-                    throw new Exception("PowerPoint must be greater than 0");
+                    throw new ValidationException("PowerPoint must be greater than 0");
                 }
              }
         }

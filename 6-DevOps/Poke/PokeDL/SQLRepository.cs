@@ -137,8 +137,8 @@ namespace PokeDL
                         Defense = reader.GetInt32(3),
                         Health = reader.GetInt32(4),
                         Speed = reader.GetInt32(5),
-                        Type = reader.GetString(6)
-                        // Abilities = GetAbilitiesByPokeId(reader.GetInt32(0))
+                        Type = reader.GetString(6),
+                        Abilities = GetAbilitiesByPokeId(reader.GetInt32(0))
                     });
                 }
             }
